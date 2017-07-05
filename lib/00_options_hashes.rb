@@ -18,19 +18,30 @@
 # # options shouldn't change.
 # ```
 
-def transmogrify(input, options = {})
-  defaults = {
-  times: 3,
-  upcase: true,
-  reverse: true
-  }
-  defaults.merge(options)
-  
-  input *= defaults[:times] if options[:times]
+# def transmogrify(input, options = {})
+#   defaults = {
+#   times: 3,
+#   upcase: false,
+#   reverse: false
+#   }
+#   defaults.merge(options)
+#
+#   input *= defaults[:times] if :times
+#
+#   input.upcase! if :upcase
+#
+#   input.reverse! if :reverse
+#
+#   input
+# end
 
-  input.upcase! if options[:upcase]
+def transmogrify(input, times: 3, upcase: false, reverse: false )
 
-  input.reverse! if options[:reverse]
+  input *= times if times
+
+  input.upcase! if upcase
+
+  input.reverse! if reverse
 
   input
 end
